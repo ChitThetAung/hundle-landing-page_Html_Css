@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* ### Body */
+/* font-family: 'Open Sans', sans-serif; */
+
+/* ### Headings */
+/* font-family: 'Poppins', sans-serif; */
+
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  background-image: url('images/bg-mobile.svg');
+  background-color: var(--Violet);
+  color: #fff;
+}
+img {
+  max-width: 100%;
+}
+
+.logo {
+  width: 30vw;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 85%;
+  margin: 3rem auto;
+  display: grid;
+  grid-row-gap: 5rem;
+  padding: 0 2rem;
+}
+.contents {
+  text-align: center;
+}
+.contents h1 {
+  min-width: 29.5rem;
+  font-size: 1.9rem;
+  padding: 0 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+.contents p {
+  font-size: 1.4rem;
+  color: lightgray;
+}
+.btn {
+  margin-top: 2rem;
+  background-color: #fff;
+  border: none;
+  padding: 1rem 7rem;
+  border-radius: 2rem;
+  color: var(--Violet);
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.link {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    body{
+        background-image: url('images/bg-desktop.svg');
+        background-position: center;
+    }
+  .container {
+    grid-template-rows: 8rem 1fr 10rem;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      'header header'
+      'hero contents'
+      'footer footer';
+      grid-column-gap: 4rem;
+      width: 95vw;
+  }
+  header {
+    grid-area: header;
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .contents {
+    grid-area: contents;
+    text-align: left;
+    margin-top: 3rem;
+  }
+  
+  footer {
+    grid-area: footer;
+  }
+  .logo {
+    width: 15vw;
+    font-family: 'Poppins', sans-serif;
+  }
+  .contents h1 {
+      padding: 0;
+      font-size: 3rem;
+  }
+  .btn{
+      padding: 1.5rem 5rem;
+      font-weight: 600;
+  }
+  .links{
+      justify-content: flex-end;
+  }
+  .link {
+    font-size: 3rem;
+  }
+}
